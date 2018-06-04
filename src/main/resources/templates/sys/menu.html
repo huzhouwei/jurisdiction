@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans" xmlns:th="http://www.w3.org/1999/xhtml">
+<span th:include="/commons/header"></span>
+<link href="/admin/vendors/z_tree/css/zTreeStyle.css" rel="stylesheet">
+<style type="text/css">
+    .x_title span{
+        color: black;
+    }
+    .ztree li span.button.chk {
+        width: 14px;
+        height: 14.5px;
+        margin: 0 3px 0 0;
+        cursor: auto;
+    }
+</style>
+<!--main-->
+<div class="right_col" role="main" style="min-height: 6631px;">
+    <div class="">
+        <div class="page-title">
+            <div class="title_left">
+                <h3>菜单管理</h3>
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="row">
+            <div class="col-md-5 col-sm-5 col-xs-10">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2><i class="fa fa-bars"></i> 菜单 </h2>
+                        <div class="clearfix" >
+                            <div style="float:right; ">
+                                <button type="button" class="btn  btn-primary ">新增</button>
+                                <button type="button" class="btn  btn-danger ">删除</button>
+                            </div>
+
+                        </div>
+                        <ul style="background-color: #9acfea;" id="treeDemo" class="ztree"></ul>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-md-7 col-sm-7 col-xs-14">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2><i class="fa fa-bars"></i> 详细信息 </h2>
+                        <div class="clearfix"></div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-md-12">
+
+            </div>
+        </div>
+    </div>
+</div>
+<!--main END-->
+<span th:include="/commons/footer"></span>
+<script type="text/javascript" src="/admin/vendors/z_tree/js/jquery.ztree.core.min.js"></script>
+<script type="text/javascript" src="/admin/vendors/z_tree/js/jquery.ztree.excheck.min.js"></script>
+<script type="text/javascript" src="/admin/js/sys/menu/jur_menu.js"></script>
+
+<script type="text/javascript">
+    $(function(){
+        jurMenu.initMenu();
+        $.fn.zTree.init($("#treeDemo"), setting, zNodes);
+
+    })
+
+
+    var setting = {
+        check: {
+            enable: true
+        },
+        data: {
+            simpleData: {
+                enable: true
+            }
+        }
+    };
+
+    var zNodes =[
+        { id:1, pId:0, name:"随意勾选 1", open:true},
+        { id:11, pId:1, name:"随意勾选 1-1", open:true},
+        { id:111, pId:11, name:"随意勾选 1-1-1"},
+        { id:112, pId:11, name:"随意勾选 1-1-2"},
+        { id:12, pId:1, name:"随意勾选 1-2", open:true},
+        { id:121, pId:12, name:"随意勾选 1-2-1"},
+        { id:122, pId:12, name:"随意勾选 1-2-2"},
+        { id:2, pId:0, name:"随意勾选 2", checked:true, open:true},
+        { id:21, pId:2, name:"随意勾选 2-1"},
+        { id:22, pId:2, name:"随意勾选 2-2", open:true},
+        { id:221, pId:22, name:"随意勾选 2-2-1", checked:true},
+        { id:222, pId:22, name:"随意勾选 2-2-2"},
+        { id:23, pId:2, name:"随意勾选 2-3"}
+    ];
+
+
+
+</script>
