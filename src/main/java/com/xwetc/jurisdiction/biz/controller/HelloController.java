@@ -7,7 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping(value = "/hello")
+@RequestMapping(value = "/biz/hello")
 public class HelloController {
 
     @Autowired
@@ -19,8 +19,10 @@ public class HelloController {
         String id = "1";
         User user = userService.getUserByID(id);
         System.out.println(user.getUsername());
-        return "/hello";
+        return "biz/hello";
     }
+
+    
 
 
 }

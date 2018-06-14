@@ -29,8 +29,6 @@ repositories {
 
 dependencies {
 
-
-
     compile('org.springframework.boot:spring-boot-starter-data-redis')
     compile('org.springframework.boot:spring-boot-starter-thymeleaf')
     compile('org.springframework.boot:spring-boot-starter-web')
@@ -43,11 +41,15 @@ dependencies {
     testCompile('org.mybatis.spring.boot:mybatis-spring-boot-starter-test:1.3.0')
 
 
-
     //pagehelper
     //compile("com.github.pagehelper:pagehelper-spring-boot-starter:1.1.1")
     //mapper 使用 xml 的 mybatis 方式，需要引入下面的包，不然 dev-tools 会报错
     //compile("tk.mybatis:mapper-spring-boot-starter:1.1.1")
+
+    //shiro
+    compile("org.apache.shiro:shiro-spring:1.2.4")
+    compile("org.apache.shiro:shiro-ehcache:1.2.4")
+    compile("org.apache.shiro:shiro-cas:1.2.4")
 
 
 
